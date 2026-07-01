@@ -181,7 +181,7 @@
     width: 13px; height: 13px;
     border: 1.5px solid #94a3b8; border-radius: 3px;
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; transition: all .15s;
+    flex-shrink: 0; transition: all .15s; 
   }
 
   .check-item.checked .cb { background: #1a56db; border-color: #1a56db; }
@@ -418,7 +418,7 @@
         </div>
         <div class="guide-item">
           <h6><i class="ti ti-calendar"></i> Validity period</h6>
-          <p>Required for temporary access requests.</p>
+          <p>Required for temporary access requests.</p>78b
         </div>
         <div class="guide-item">
           <h6><i class="ti ti-file-text"></i> Reason</h6>

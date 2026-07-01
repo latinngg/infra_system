@@ -16,3 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('jobrequest');
 });
+
+Route::get('/assets_handover', function () {
+    return view('assets_handover');
+});
+
+Route::get('/hs-registration', function () {
+    return view('hs_registrationform');
+});
+
+Route::get('/preventive-annual', function () {
+    return view('preventive_annual');
+});
+
+Route::get('/preventive-checklist', function () {
+    return view('preventive_checklist');
+});
+
+Route::get('/preventive-datasheet', function () {
+    return view('preventive_datasheet');
+});
