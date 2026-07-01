@@ -1,38 +1,27 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AssetHandoverController;
+use App\Http\Controllers\HardwareSoftwareController;
+use App\Http\Controllers\PreventiveAnnualController;
+use App\Http\Controllers\PreventiveChecklistController;
+use App\Http\Controllers\PreventiveDatasheetController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// Assets Handover Form
+Route::get('/assets-handover', [AssetHandoverController::class, 'create'])->name('asset-handover.form');
+Route::post('/assets-handover', [AssetHandoverController::class, 'store'])->name('asset-handover.store');
 
-Route::get('/', function () {
-    return view('jobrequest');
-});
+// Hardware & Software Registration
+Route::get('/hardware-software', [HardwareSoftwareController::class, 'create'])->name('hardware-software.form');
+Route::post('/hardware-software', [HardwareSoftwareController::class, 'store'])->name('hardware-software.store');
 
-Route::get('/assets_handover', function () {
-    return view('assets_handover');
-});
+// PM Annual Plan
+Route::get('/preventive-annual', [PreventiveAnnualController::class, 'create'])->name('annual-plan.form');
+Route::post('/preventive-annual', [PreventiveAnnualController::class, 'store'])->name('annual-plan.store');
 
-Route::get('/hs-registration', function () {
-    return view('hs_registrationform');
-});
+// PM Checklist
+Route::get('/preventive-checklist', [PreventiveChecklistController::class, 'create'])->name('pm-checklist.form');
+Route::post('/preventive-checklist', [PreventiveChecklistController::class, 'store'])->name('pm-checklist.store');
 
-Route::get('/preventive-annual', function () {
-    return view('preventive_annual');
-});
-
-Route::get('/preventive-checklist', function () {
-    return view('preventive_checklist');
-});
-
-Route::get('/preventive-datasheet', function () {
-    return view('preventive_datasheet');
-});
+// PM Data Sheet
+Route::get('/preventive-datasheet', [PreventiveDatasheetController::class, 'create'])->name('preventive-maintenance.form');
+Route::post('/preventive-datasheet', [PreventiveDatasheetController::class, 'store'])->name('preventive-maintenance.store');

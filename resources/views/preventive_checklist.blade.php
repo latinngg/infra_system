@@ -419,4 +419,3 @@
     sync();
   });
 </script>
-@endsection

@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
   .ap-wrap * { box-sizing: border-box; }
@@ -165,7 +164,7 @@
       </div>
 
       <form action="{{ route('annual-plan.store') }}" method="POST">
-      @csrf
+  
 
         <div class="ap-card">
           <div class="ap-section-header">
@@ -256,4 +255,3 @@
     </div>
   </div>
 </div>
-@endsection

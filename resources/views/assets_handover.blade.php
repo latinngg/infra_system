@@ -1,5 +1,3 @@
-@extends('layouts.app')
-@section('content')
 <style>
   body {
     background: #e9edf1;
@@ -371,4 +369,3 @@
 
   </form>
 </div>
-@endsection
