@@ -1,198 +1,204 @@
-<style>
-  body {
-    background: #e9edf1;
-  }
+@extends('layouts.app')
+@section('title', 'Assets Handover')
 
-  .ah-wrap {
-    padding: 24px 0 48px;
-  }
-
-  .ah-page {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0 auto 24px;
-    background: #fff;
-    border: 1px solid #000;
-    padding: 14mm 12mm;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: #111;
-    position: relative;
-  }
-
-  .ah-page table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .ah-page table td,
-  .ah-page table th {
-    border: 1px solid #000;
-    padding: 4px 6px;
-    vertical-align: middle;
-  }
-
-  /* ── HEADER ── */
-  .ah-header td {
-    text-align: center;
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .ah-header-title {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: .5px;
-  }
-
-  .ah-logo {
-    text-align: center;
-    margin: 14px 0 18px;
-  }
-
-  /* ── EMPLOYEE INFO ── */
-  .ah-info-table td {
-    height: 30px;
-  }
-
-  .ah-info-label {
-    width: 190px;
-    border: none !important;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: .3px;
-  }
-
-  .ah-info-input {
-    border: 1px solid #000 !important;
-  }
-
-  .ah-page input[type=text],
-  .ah-page input[type=date] {
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 3px 4px;
-    font-family: inherit;
-    font-size: 12px;
-    background: transparent;
-  }
-
-  /* ── INTRO TEXT ── */
-  .ah-intro {
-    margin: 22px 4px 14px;
-    line-height: 1.8;
-    text-align: justify;
-    font-size: 12px;
-  }
-
-  .ah-intro p { margin-bottom: 10px; }
-  .ah-intro .indent { display: block; text-indent: 34px; }
-
-  /* ── ASSETS TABLE ── */
-  .ah-assets-table th {
-    background: #f2f2f2;
-    font-size: 10px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .3px;
-  }
-
-  .ah-assets-table td { height: 26px; }
-  .ah-assets-table .ah-no { width: 34px; text-align: center; font-weight: 600; }
-  .ah-assets-table .ah-qty { width: 60px; }
-
-  /* ── SECTION CONTENT (page 2) ── */
-  .ah-content {
-    margin: 25px 6px;
-    line-height: 1.7;
-    text-align: justify;
-  }
-
-  .ah-content h4 {
-    margin: 0 0 10px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .3px;
-  }
-
-  .ah-content p { margin-bottom: 14px; }
-  .ah-content ol { padding-left: 20px; }
-  .ah-content li { margin-bottom: 12px; }
-
-  /* ── SIGNATURE ── */
-  .ah-signature {
-    margin-top: 60px;
-  }
-
-  .ah-signature td {
-    border: none;
-    text-align: center;
-    vertical-align: top;
-    font-size: 11px;
-  }
-
-  .ah-sig-line {
-    margin-top: 46px;
-    border-top: 1px solid #000;
-    padding-top: 4px;
-    display: inline-block;
-    min-width: 220px;
-  }
-
-  /* ── FOOTER ── */
-  .ah-footer {
-    position: absolute;
-    bottom: 10mm;
-    left: 12mm;
-    right: 12mm;
-    font-size: 9px;
-    color: #333;
-    line-height: 1.5;
-  }
-
-  .ah-actions {
-    max-width: 210mm;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .ah-btn {
-    padding: 9px 20px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid;
-    font-family: inherit;
-  }
-
-  .ah-btn-primary { background: #1a56db; border-color: #1a56db; color: #fff; }
-  .ah-btn-primary:hover { background: #1e40af; }
-  .ah-btn-outline { background: #fff; border-color: #94a3b8; color: #1e293b; }
-  .ah-btn-outline:hover { background: #f8fafc; }
-
-  @media print {
-    body { background: #fff; }
-    .ah-wrap { padding: 0; }
-    .ah-page {
-      margin: 0 auto;
-      border: none;
-      box-shadow: none;
-      page-break-after: always;
+@push('styles')
+  <style>
+    body {
+      background: #e9edf1;
     }
-    .ah-page:last-of-type { page-break-after: auto; }
-    .no-print { display: none !important; }
-  }
 
-  @media screen {
-    .ah-page { box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
-  }
+    .ah-wrap {
+      padding: 24px 0 48px;
+    }
+
+    .ah-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 24px;
+      background: #fff;
+      border: 1px solid #000;
+      padding: 14mm 12mm;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #111;
+      position: relative;
+    }
+
+    .ah-page table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ah-page table td,
+    .ah-page table th {
+      border: 1px solid #000;
+      padding: 4px 6px;
+      vertical-align: middle;
+    }
+
+    /* ── HEADER ── */
+    .ah-header td {
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .ah-header-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .ah-logo {
+      text-align: center;
+      margin: 14px 0 18px;
+    }
+
+    /* ── EMPLOYEE INFO ── */
+    .ah-info-table td {
+      height: 30px;
+    }
+
+    .ah-info-label {
+      width: 190px;
+      border: none !important;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .3px;
+    }
+
+    .ah-info-input {
+      border: 1px solid #000 !important;
+    }
+
+    .ah-page input[type=text],
+    .ah-page input[type=date] {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 3px 4px;
+      font-family: inherit;
+      font-size: 12px;
+      background: transparent;
+    }
+
+    /* ── INTRO TEXT ── */
+    .ah-intro {
+      margin: 22px 4px 14px;
+      line-height: 1.8;
+      text-align: justify;
+      font-size: 12px;
+    }
+
+    .ah-intro p { margin-bottom: 10px; }
+    .ah-intro .indent { display: block; text-indent: 34px; }
+
+    /* ── ASSETS TABLE ── */
+    .ah-assets-table th {
+      background: #f2f2f2;
+      font-size: 10px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+    }
+
+    .ah-assets-table td { height: 26px; }
+    .ah-assets-table .ah-no { width: 34px; text-align: center; font-weight: 600; }
+    .ah-assets-table .ah-qty { width: 60px; }
+
+    /* ── SECTION CONTENT (page 2) ── */
+    .ah-content {
+      margin: 25px 6px;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .ah-content h4 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .ah-content p { margin-bottom: 14px; }
+    .ah-content ol { padding-left: 20px; }
+    .ah-content li { margin-bottom: 12px; }
+
+    /* ── SIGNATURE ── */
+    .ah-signature {
+      margin-top: 60px;
+    }
+
+    .ah-signature td {
+      border: none;
+      text-align: center;
+      vertical-align: top;
+      font-size: 11px;
+    }
+
+    .ah-sig-line {
+      margin-top: 46px;
+      border-top: 1px solid #000;
+      padding-top: 4px;
+      display: inline-block;
+      min-width: 220px;
+    }
+
+    /* ── FOOTER ── */
+    .ah-footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 12mm;
+      right: 12mm;
+      font-size: 9px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .ah-actions {
+      max-width: 210mm;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .ah-btn {
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid;
+      font-family: inherit;
+    }
+
+    .ah-btn-primary { background: #1a56db; border-color: #1a56db; color: #fff; }
+    .ah-btn-primary:hover { background: #1e40af; }
+    .ah-btn-outline { background: #fff; border-color: #94a3b8; color: #1e293b; }
+    .ah-btn-outline:hover { background: #f8fafc; }
+
+    @media print {
+      body { background: #fff; }
+      .ah-wrap { padding: 0; }
+      .ah-page {
+        margin: 0 auto;
+        border: none;
+        box-shadow: none;
+        page-break-after: always;
+      }
+      .ah-page:last-of-type { page-break-after: auto; }
+      .no-print { display: none !important; }
+    }
+
+    @media screen {
+      .ah-page { box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+    }
 </style>
+@endpush
 
+@section('content')
 <div class="ah-wrap">
   <form action="{{ route('asset-handover.store') }}" method="POST">
   @csrf
@@ -369,3 +375,8 @@
 
   </form>
 </div>
+@endsection
+
+@push('scripts')
+  
+@endpush

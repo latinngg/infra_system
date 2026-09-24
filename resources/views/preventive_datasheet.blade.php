@@ -1,4 +1,9 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"> -->
+
+@extends('layouts.app')
+@section('title', 'Assets Handover')
+
+@push('styles')
 <style>
   .pm-wrap * { box-sizing: border-box; }
 
@@ -127,7 +132,9 @@
     .pm-grid-4 { grid-template-columns: 1fr 1fr; }
   }
 </style>
+@endpush
 
+@section('content')
 <div class="pm-wrap">
   <div class="pm-page">
 
@@ -323,7 +330,9 @@
     </div>
   </div>
 </div>
+@endsection
 
+@push('scripts')
 <script>
   // Card-style radio selection for device type
   document.querySelectorAll('#pm-device-grid .pm-device-card').forEach(function (card) {
@@ -339,3 +348,4 @@
     });
   });
 </script>
+@endpush

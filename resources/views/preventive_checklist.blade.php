@@ -1,5 +1,9 @@
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"> -->
+@extends('layouts.app')
+@section('title', 'Assets Handover')
+
+@push('styles')
 <style>
   .cl-wrap * { box-sizing: border-box; }
 
@@ -197,7 +201,9 @@
     .cl-wrap { background: #fff; padding: 0; }
   }
 </style>
+@endpush
 
+@section('content')
 <div class="cl-wrap">
   <div class="cl-page">
 
@@ -380,7 +386,9 @@
     </div>
   </div>
 </div>
+@endsection
 
+@push('scripts')
 <script>
   // Checklist checkbox toggle
   document.querySelectorAll('#cl-checks-grid .cl-check-item').forEach(function (item) {
@@ -419,3 +427,4 @@
     sync();
   });
 </script>
+@endpush

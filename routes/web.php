@@ -1,14 +1,22 @@
 <?php
 
-use App\Http\Controllers\AssetHandoverController;
+use App\Http\Controllers\AssetsHandoverController;
 use App\Http\Controllers\HardwareSoftwareController;
+use App\Http\Controllers\JobRequestController;
 use App\Http\Controllers\PreventiveAnnualController;
 use App\Http\Controllers\PreventiveChecklistController;
 use App\Http\Controllers\PreventiveDatasheetController;
+use Illuminate\Support\Facades\Route;
+
+Route::redirect('/', '/job-request');
+
+// IT Installation / Repair Job Request
+Route::get('/job-request', [JobRequestController::class, 'create'])->name('job-request.form');
+Route::post('/job-request', [JobRequestController::class, 'store'])->name('job-request.store');
 
 // Assets Handover Form
-Route::get('/assets-handover', [AssetHandoverController::class, 'create'])->name('asset-handover.form');
-Route::post('/assets-handover', [AssetHandoverController::class, 'store'])->name('asset-handover.store');
+Route::get('/assets-handover', [AssetsHandoverController::class, 'create'])->name('asset-handover.form');
+Route::post('/assets-handover', [AssetsHandoverController::class, 'store'])->name('asset-handover.store');
 
 // Hardware & Software Registration
 Route::get('/hardware-software', [HardwareSoftwareController::class, 'create'])->name('hardware-software.form');
