@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PreventiveDatasheetController extends Controller
+class IPActivityController extends Controller
 {
     /**
-     * Display the Preventive Maintenance Datasheet form.
+     * Display the IP Activity form.
      */
     public function create()
     {
-        return view('preventive_datasheet');
+        return view('ip_activity');
     }
 
     /**
-     * Store the submitted Preventive Maintenance Datasheet.
+     * Store the submitted IP Activity Information.
      */
     public function store(Request $request)
     {
@@ -34,7 +34,7 @@ class PreventiveDatasheetController extends Controller
         // PreventiveDatasheet::create($validated);
 
         return redirect()
-            ->route('pm-datasheet.form')
-            ->with('success', 'Preventive Maintenance Datasheet submitted successfully.');
+            ->route('ip-activity.form')
+            ->with('success', 'IP Activity Information submitted successfully.');
     }
 }

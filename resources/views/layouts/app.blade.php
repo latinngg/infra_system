@@ -85,8 +85,7 @@
     ['route' => 'asset-handover.form',        'match' => 'asset-handover.*',         'icon' => 'ti-package',        'label' => 'Assets Handover'],
     ['route' => 'hardware-software.form',     'match' => 'hardware-software.*',      'icon' => 'ti-device-desktop', 'label' => 'Hardware & Software'],
     ['route' => 'annual-plan.form',           'match' => 'annual-plan.*',            'icon' => 'ti-calendar-stats', 'label' => 'PM Annual Plan'],
-    ['route' => 'pm-checklist.form',          'match' => 'pm-checklist.*',           'icon' => 'ti-list-check',     'label' => 'PM Checklist'],
-    ['route' => 'preventive-maintenance.form','match' => 'preventive-maintenance.*', 'icon' => 'ti-clipboard-data', 'label' => 'PM Data Sheet'],
+    ['route' => 'pm-checklist.form',          'match' => 'pm-checklist.*',           'icon' => 'ti-list-check',     'label' => 'PM Checklist']
   ];
 @endphp
 

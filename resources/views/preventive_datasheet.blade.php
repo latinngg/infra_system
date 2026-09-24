@@ -1,7 +1,7 @@
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"> -->
 
 @extends('layouts.app')
-@section('title', 'Assets Handover')
+@section('title', 'Preventive Maintenance Data Sheet')
 
 @push('styles')
 <style>
